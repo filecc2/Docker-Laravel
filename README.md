@@ -1,3 +1,12 @@
+## Usefull aliases
+
+```bash
+alias compose="docker-compose"
+alias run="docker-compose run --rm"
+alias down="docker-compose down"
+alias start="docker-compose up"
+```
+
 ## To start the configuration
 
 ```bash
