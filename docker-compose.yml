@@ -13,6 +13,7 @@ services:
       - php
       - mysql
       - npm
+      # - adminer
   mysql: 
     image: mysql:latest
     ports:
@@ -37,7 +38,7 @@ services:
     working_dir: /var/www/html
     ports:
       - '${VITE_PORT:-5173}:${VITE_PORT:-5173}'
-    # entrypoint: ["npm"]
+    entrypoint: ["npm"]
     command: npm run dev -- --host
   composer: 
     build:
@@ -57,5 +58,14 @@ services:
       - mysql
       - php
     entrypoint: ["php", "/var/www/html/artisan"]
+  # adminer:
+  #   image: adminer:standalone
+  #   ports:
+  #     - 8080:8080
+  #   environment:
+  #     - MYSQL_ROOT_PASSWORD=password
+  #     - MYSQL_USER=laravel
+  #     - MYSQL_PASSWORD=password
+  #     - MYSQL_DATABASE=laravel
     
     

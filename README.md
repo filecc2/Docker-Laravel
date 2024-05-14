@@ -27,7 +27,7 @@ docker-compose run --rm composer create-project laravel/laravel .
 
 #### Install node dependencies
 ```bash
-docker-compose run --rm npm npm install
+docker-compose run --rm npm install
 ```
 
 #### Run a migration in Laravel
